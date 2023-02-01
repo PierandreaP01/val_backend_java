@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import it.unimol.val_backend.Weapon;
 
-public interface WeaponRepository extends JpaRepository<Weapon, Integer>{
-    
+public interface WeaponRepository extends JpaRepository<Weapon, Integer> {
+
 }

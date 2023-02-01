@@ -16,11 +16,11 @@ import it.unimol.val_backend.repository.AgentRepository;
 public class AgentService {
     private final AgentRepository agentRepository;
 
-    public List<Agent> getAllAgents(){
+    public List<Agent> getAllAgents() {
         return this.agentRepository.findAll();
     }
 
-    public void insertAgents(){
+    public void insertAgents() {
         List<ModelInput> agents = new ArrayList<>();
 
         agents.add(ModelInput.builder().id(1).name("Sova").imgUrl("https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/fullportrait.png").build());
@@ -38,6 +38,5 @@ public class AgentService {
 
             this.agentRepository.save(agent);
         }
-        
     }
 }

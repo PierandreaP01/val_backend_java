@@ -15,11 +15,11 @@ import lombok.RequiredArgsConstructor;
 public class WeaponService {
     private final WeaponRepository weaponRepository;
 
-    public List<Weapon> getAllWeapons(){
+    public List<Weapon> getAllWeapons() {
         return this.weaponRepository.findAll();
     }
 
-    public void insertWeapons(){
+    public void insertWeapons() {
         List<ModelInput> weapons = new ArrayList<>();
 
         weapons.add(ModelInput.builder().id(1).name("Operator").imgUrl("https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt3e6bf41bd01ca11e/5eb281ca24400043b65016ba/operator.png").build());
@@ -37,6 +37,5 @@ public class WeaponService {
 
             this.weaponRepository.save(weapon);
         }
-        
     }
 }

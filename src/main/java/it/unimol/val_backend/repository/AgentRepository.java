@@ -7,7 +7,6 @@ import it.unimol.val_backend.Agent;
 /**
  * AgentRepository
  */
-public interface AgentRepository extends JpaRepository<Agent, Integer>{
+public interface AgentRepository extends JpaRepository<Agent, Integer> {
 
-    
 }
