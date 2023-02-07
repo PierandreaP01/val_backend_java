@@ -3,18 +3,25 @@ package it.unimol.val_backend.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.unimol.val_backend.Map;
 import it.unimol.val_backend.ModelInput;
 import it.unimol.val_backend.repository.MapRepository;
-import lombok.RequiredArgsConstructor;
+
 
 @Service
-@RequiredArgsConstructor
 public class MapService {
 
-    private final MapRepository mapRepository;
+    private MapRepository mapRepository;
+
+    @Autowired
+    public MapService(MapRepository mapRepository) {
+        this.mapRepository = mapRepository;
+    }
+
+
 
     public List<Map> getAllMaps() {
         return this.mapRepository.findAll();

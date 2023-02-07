@@ -3,6 +3,7 @@ package it.unimol.val_backend.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.unimol.val_backend.ModelInput;
@@ -13,7 +14,14 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class WeaponService {
-    private final WeaponRepository weaponRepository;
+
+    private WeaponRepository weaponRepository;
+
+    @Autowired
+    public WeaponService(WeaponRepository weaponRepository) {
+        this.weaponRepository = weaponRepository;
+    }
+
 
     public List<Weapon> getAllWeapons() {
         return this.weaponRepository.findAll();
