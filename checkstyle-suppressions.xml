@@ -11,4 +11,5 @@
     <suppress checks="MagicNumberCheck" files="."/>
     <suppress checks="FinalParametersCheck" files="."/>
     <suppress checks="LineLengthCheck" files="."/>
+    <suppress checks="HiddenFieldCheck" files="."/>
 </suppressions>
