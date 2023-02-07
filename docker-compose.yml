@@ -3,6 +3,7 @@ version: "3.8"
 services:
   postgresdb:
     container_name: postgresdb
+    image: postgres
     ports:
       - "5432:5432"
     restart: unless-stopped
@@ -12,3 +13,9 @@ services:
       - POSTGRES_PASSWORD=2503
 
   val_backend:
+    container_name: val_backend
+    build: ../val_backend_java
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
