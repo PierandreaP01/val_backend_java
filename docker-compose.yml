@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  postgresdb:
+    container_name: postgresdb
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=piero
+      - POSTGRES_DB=val_db
+      - POSTGRES_PASSWORD=2503
+
+  val_backend:
