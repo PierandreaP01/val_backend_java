@@ -1,4 +1,4 @@
-name: Pipeline Java Check CI
+name: Pipeline Java Check, Build and Deploy on Docker CI/CD
 
 on:
   push:
@@ -18,7 +18,12 @@ jobs:
           java-version: "17"
           distribution: "zulu"
           cache: maven
-      - name: Checkstyle
-        run: mvn checkstyle:check
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Maven Build
+        run: mvn package
+      - name: Build and Deploy DockerHub
+      - uses: docker/build-push-action@v4
+        with:
+          username: ${{secrets.docker_username}}
+          password: ${{secrets.docker_password}}
+          repository: piero01/val_backend
+          tags: latest

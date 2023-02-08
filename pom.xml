@@ -60,11 +60,23 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>3.2.0</version>
+					<executions>
+						<execution>
+						<id>checkstyle</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						</execution>
+					</executions>
                     <configuration>
                         <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
-                    </configuration>
+						<failOnViolation>true</failOnViolation>
+					</configuration>
                 </plugin>
 		</plugins>
+
+		
 	</build>
 
 </project>
