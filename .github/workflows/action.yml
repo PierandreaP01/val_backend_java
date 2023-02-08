@@ -28,4 +28,4 @@ jobs:
       - name: Set up Docker Build Image
         run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/val_backend_java
       - name: Push to DockerHub
-        run: docker push ${{secrets.DOCKER.USERNAME}}/val_backend
+        run: docker push ${{secrets.DOCKER_USERNAME}}/val_backend
