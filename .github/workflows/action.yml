@@ -21,7 +21,7 @@ jobs:
       - name: Maven Build
         run: mvn package
       - name: Build and Deploy DockerHub
-      - uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v4
         with:
           username: ${{secrets.docker_username}}
           password: ${{secrets.docker_password}}
