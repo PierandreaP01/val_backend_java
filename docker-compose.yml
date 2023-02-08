@@ -14,7 +14,7 @@ services:
 
   val_backend:
     container_name: val_backend
-    build: ../val_backend_java
+    build: ./
     ports:
       - "8080:8080"
     depends_on:
